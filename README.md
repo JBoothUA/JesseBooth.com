@@ -1,3 +1,3 @@
 # www.jessebooth.codes
 
-Simple Portfolio / Resume site.  Completely optimized for Speed and Google Searches.
+Simple Portfolio / Résumé site.  Completely optimized for Speed and Google Searches.
