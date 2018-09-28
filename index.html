@@ -38,7 +38,7 @@
                 <div class="gb_Dc gb_9d">
                     <div class="gb_Mc gb_8c gb_R gb_Nc gb_Hf">
                         <div class="gb_Pc">
-                            <a target="_blank" href="http://www.redyoshi.com" class="gb_b" role="button" tabindex="0">
+                            <a onclick="window.open('http://www.redyoshi.com'); return false;" target="_blank" href="http://www.redyoshi.com" class="gb_b" role="button" tabindex="0">
                                 <img src="http://www.jessebooth.codes/images/red-yoshi.png" />
                             </a>
                         </div>
@@ -102,7 +102,7 @@
         <iframe src="http://docs.google.com/gview?url=https://www.matrix.tools/careers/resume&embedded=true"></iframe>
     </div>
     <div ng-non-bindable="">
-        <div class="gb_aa" id="gbsfw">//jeb</div>
+        <div class="gb_aa" id="gbsfw"></div>
         <div class="gb_xe">
             <div class="gb_we">
                 <div>Jesse Booth</div>
@@ -178,6 +178,10 @@
 
     .margin-left-5 {
         margin-left:5px;
+    }
+
+    #gbsfw {
+        background-color: transparent;
     }
 
     .main .content {
@@ -2525,7 +2529,6 @@
             _._DumpException(e)
         }
     })(this.gbar_);
-    // Google Inc.
 </script>
 
 <script>
@@ -3222,7 +3225,6 @@
             _.k.hasListener = function(a, c) {
                 return this.Gb.hasListener(_.ua(a) ? String(a) : void 0, c)
             };
-
         } catch (e) {
             _._DumpException(e)
         }
