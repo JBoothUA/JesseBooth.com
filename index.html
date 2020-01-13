@@ -2,11 +2,11 @@
 <html lang="en-US">
 <head>
     <meta charset="utf-8" />
-    <title>Jesse Booth - Full Stack Development Leader</title>
-    <meta content="Jesse Booth - Full Stack Development Leader" property="og:title" />
+    <title>Jesse Booth - Full-Stack Development Leader</title>
+    <meta content="Jesse Booth - Full-Stack Development Leader" property="og:title" />
     <meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-    <meta content="Jesse Booth - Full Stack Development Leader" name="description" />
-    <meta content="Jesse Booth - Full Stack Development Leader" property="og:description" />
+    <meta content="Jesse Booth - Full-Stack Development Leader" name="description" />
+    <meta content="Jesse Booth - Full-Stack Development Leader" property="og:description" />
     <meta property="og:type" content="website" />
 
     <meta content="http://www.jessebooth.codes" property="og:url" />
@@ -27,7 +27,7 @@
         <div class="inner-header gb_Dd gb_ce gb_Md gb_Ld gb_ee">
             <div class="gb_Bc gb_Xd gb_ze">
                 <div class="circle-button" aria-expanded="false" aria-label="Main menu" role="button" tabindex="0"><svg focusable="false" viewbox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div>
-                <img src="http://www.jessebooth.codes/images/mario.gif" class="profile-image" aria-label="Profile image" />
+                <img onclick="toggleResumes()" src="http://www.jessebooth.codes/images/mario.gif" role="button" class="profile-image" aria-label="Profile image" />
                 <div class="circle-button gb_ic gb_7a" aria-label="Go back" role="button" tabindex="0"><svg focusable="false" viewbox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path></svg></div>
                 <div class="circle-button gb_jc gb_7a" aria-label="Close" role="button" tabindex="0"><svg viewbox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></div>
             </div>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="gb_fb gb_8c gb_Rg gb_R gb_Hf gb_ob">
                     <div class="gb_Pc gb_ib gb_Rg gb_R">
-                        <a class="gb_b gb_eb gb_R" aria-label="Jesse Booth - Full Stack Development Leader" role="button" tabindex="0"><span class="mario"></span></a>
+                        <a class="gb_b gb_eb gb_R" aria-label="Jesse Booth - Full-Stack Development Leader" role="button" tabindex="0"><span class="mario"></span></a>
                     </div>
                     <div class="gb_ub gb_aa" aria-label="Account Information" aria-hidden="true">
                         <div class="gb_xb">
@@ -58,10 +58,10 @@
                             </div>
                             <div class="gb_zb bold">
                                 <div class="gb_Cb bold">Jesse Booth</div>
-                                <div class="bold">Full Stack Development Leader</div>
+                                <div id="resume-name" class="bold">Principal Software Development Engineer</div>
                                 <div class="gb_Eb">256-797-6092</div>
                                 <div class="gb_Eb">jesseboothua@gmail.com</div>
-                                <a class="gb_za gb_3f gbp1 gb_Pe gb_Fb" href="www.matrix.tools/careers/resume">Download Resume</a>
+                                <a id="resume-download" class="gb_za gb_3f gbp1 gb_Pe gb_Fb" href="https://www.matrix.tools/careers/resume/Booth_Resume">Download Resume</a>
                             </div>
                         </div>
                     </div>
@@ -74,13 +74,7 @@
         <div class="gb_ie">
             <div class="gb_9b">
                 <div class="nametag name"><div><span class="border-bottom">Jesse Booth</span></div></div>
-                <p class="center">Full Stack Development Leader, Azure and Angular Architect, Google Fanboy, Dog Lover</p>
-                Stack Overflow
-                <br />
-                <a href="https://stackoverflow.com/users/8946627/jboothua" target="_blank">
-                    <img src="https://stackoverflow.com/users/flair/8946627.png?theme=dark" width="208" height="58" alt="profile for JBoothUA at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for JBoothUA at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
-                </a>
-                <br /><br />               
+                <p>Full-Stack Development Leader, Azure and Angular Architect, Google Fanboy, Dog Lover</p>
                 <a target="_blank" href="https://stackblitz.com/@JBoothUA">
                     <img class="stackblitz" alt="StackBlitz" src="https://c.staticblitz.com/assets/blitz_logo-8cdef1d0bba1bc528b77ed45e932e1dbab139be42559cc78b4ed506cb2f698b2.png">
                     <span>StackBlitz</span>
@@ -90,6 +84,12 @@
                     <svg height="32" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
                     <span>Github</span>
                 </a>
+                <br /><br />
+                Stack Overflow
+                <br />
+                <a href="https://stackoverflow.com/users/8946627/jboothua" target="_blank">
+                    <img src="https://stackoverflow.com/users/flair/8946627.png?theme=dark" width="208" height="58" alt="profile for JBoothUA at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for JBoothUA at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+                </a>            
             </div>
         </div>
         <div class="slide-menu-placeholder"></div>
@@ -98,17 +98,22 @@
         <div class="content">    
             <div class="title">
                 <h1>Jesse Booth</h1>
-                <h2>Full Stack Development Leader</h2>
+                <h2 id="resume-title">Principal Software Development Engineer</h2>
             </div>
         </div>
-        <iframe src="http://docs.google.com/gview?url=www.matrix.tools/careers/resume&embedded=true"></iframe>
+        <iframe id="resume-iframe" src="http://docs.google.com/gview?url=www.matrix.tools/careers/resume/Booth_Resume&embedded=true"></iframe>
+        <div class="center black">
+            <a class="bold" title="Digital Marketing and SEO Services" href="https://www.matrix.tools/Generate-Your-Own-Free-Web-Resume" target="_blank">Generate Your Own Free Web Resume!</a>
+            <br /><br />
+            <a title="Digital Marketing and SEO Services" href="https://www.matrix.tools" target="_blank">Website Design by Matrix Tools</a>
+        </div>
     </div>
     <div ng-non-bindable="">
         <div class="gb_aa" id="gbsfw"></div>
         <div class="gb_xe">
             <div class="gb_we">
                 <div>Jesse Booth</div>
-                <div>Full Stack Development Leader</div>
+                <div>Full-Stack Development Leader</div>
                 <div>256-797-6092</div>
                 <div>jesseboothua@gmail.com</div>
             </div>
@@ -130,6 +135,11 @@
         overflow: hidden;
         color: rgba(0, 0, 0, 0.87);
         margin: 0;
+        cursor: url(http://www.jessebooth.codes/images/mario-cursor.png), auto !important;
+    }
+
+    .black {
+        background-color: black;
     }
 
     button {
@@ -152,6 +162,7 @@
         height: 55px;
         width: 55px;
         position: relative;
+        cursor: pointer;
     }
 
     .stackblitz {
@@ -172,6 +183,8 @@
         margin-left: auto;
         margin-right:auto;
         text-align: center;
+        width:100%;
+        padding: 10px;
     }
 
     .wallpaper {
@@ -1521,6 +1534,27 @@
         }
     }
 </style>
+
+<script id="jb-custom-scripts">
+    function toggleResumes() {
+        var resumeTitle = document.getElementById('resume-title');
+        var resumeName = document.getElementById('resume-name');
+        var resumeDownload = document.getElementById('resume-download');
+        var resumeIframe = document.getElementById('resume-iframe');
+
+        if (resumeTitle.innerText === 'Principal Software Development Engineer') {
+            resumeTitle.innerText = 'Full-Stack Development Leader';
+            resumeName.innerText = 'Full-Stack Development Leader';
+            resumeDownload.href = 'https://www.matrix.tools/careers/resume/Booth_Jesse_Resume_Final';
+            resumeIframe.src = 'http://docs.google.com/gview?url=www.matrix.tools/careers/resume/Booth_Jesse_Resume_Final&embedded=true';
+        } else {
+            resumeTitle.innerText = 'Principal Software Development Engineer';
+            resumeName.innerText = 'Principal Software Development Engineer';
+            resumeDownload.href = 'https://www.matrix.tools/careers/resume/Booth_Resume';
+            resumeIframe.src = 'http://docs.google.com/gview?url=www.matrix.tools/careers/resume/Booth_Resume&embedded=true';
+        }
+    }
+</script>
 
 <script id="slide-menu-motion">
     ;
