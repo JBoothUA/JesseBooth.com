@@ -1,13 +1,14 @@
 ﻿<!--//jeb start from scratch, get http from a blank .net project -->
-<!--//jeb resume doesn't show, fix menus, black blog upper left -->
-<!--//jeb make into a template that we can generate web resumes with (SPIKE: need to upload a pdf file to my machine, or where ??) -->
+<!--//jeb resume doesn't show, fix menus, black blob upper left, NO BLOG what to do with yoshi image? -->
+<!--//jeb make into a template that we can generate web resumes with (SPIKE: how to upload a pdf file to my machine, or where azure ??) -->
+<!--//jeb make a REAL template (copy to template.html and remove the mario stuff)-->
 <!DOCTYPE html>
 <html lang="en-US">
 
 <head>
   <meta charset="utf-8" />
-  <title>Jesse Booth - Development Leader</title>
-  <meta content="Jesse Booth - Development Leader" property="og:title" />
+  <title>Jesse Booth - Software Development Leader</title>
+  <meta content="Jesse Booth - Software Development Leader" property="og:title" />
   <meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
   <meta content="Principal Software Engineer" name="description" />
   <meta content="Principal Software Engineer" property="og:description" />
@@ -56,8 +57,8 @@
         </div>
         <div class="gb_fb gb_8c gb_Rg gb_R gb_Hf gb_ob">
           <div class="gb_Pc gb_ib gb_Rg gb_R">
-            <a class="gb_b gb_eb gb_R" aria-label="Jesse Booth - Development Leader" role="button"
-              tabindex="0"><span class="mario"></span></a>
+            <a class="gb_b gb_eb gb_R" aria-label="Jesse Booth - Software Development Leader" role="button" tabindex="0"><span
+                class="mario"></span></a>
           </div>
           <div class="gb_ub gb_aa" aria-label="Account Information" aria-hidden="true">
             <div class="gb_xb">
@@ -143,7 +144,7 @@
     <div class="gb_xe">
       <div class="gb_we">
         <div>Jesse Booth</div>
-        <div>Development Leader</div>
+        <div>Software Development Leader</div>
         <div>256-797-6092</div>
         <div>jesseboothua@gmail.com</div>
       </div>
@@ -1582,15 +1583,15 @@
 </style>
 
 <script id="jb-custom-scripts">
-  function toggleResumes() {
+  function toggleResumes() {//jeb
     var resumeTitle = document.getElementById('resume-title');
     var resumeName = document.getElementById('resume-name');
     var resumeDownload = document.getElementById('resume-download');
     var resumeIframe = document.getElementById('resume-iframe');
 
     if (resumeTitle.innerText === 'Principal Software Engineer') {
-      resumeTitle.innerText = 'Development Leader';
-      resumeName.innerText = 'Development Leader';
+      resumeTitle.innerText = 'Software Development Leader';
+      resumeName.innerText = 'Software Development Leader';
       resumeDownload.href = 'https://www.matrix.tools/api/resume/JesseBooth/Booth_Resume.docx';
       resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Booth_Resume_Full.docx&embedded=true';
     } else {
