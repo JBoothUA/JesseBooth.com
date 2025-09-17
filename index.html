@@ -6,8 +6,8 @@ get rid of any js errors -->
 
 <head>
   <meta charset="utf-8" />
-  <title>Jesse Booth - Software Engineering Team Lead</title>
-  <meta content="Jesse Booth - Software Engineering Team Lead" property="og:title" />
+  <title>Jesse Booth - Software Engineering Leader</title>
+  <meta content="Jesse Booth - Software Engineering Leader" property="og:title" />
   <meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
   <meta content="Principal Software Developer" name="description" />
   <meta content="Principal Software Developer" property="og:description" />
@@ -45,7 +45,7 @@ get rid of any js errors -->
       <div class="gb_Cc gb_jb gb_Bc gb_6d" ng-non-bindable="" data-ogsr-up="">
         <div class="gb_fb gb_8c gb_Rg gb_R gb_Hf gb_ob">
           <div class="gb_Pc gb_ib gb_Rg gb_R">
-            <a class="gb_b gb_eb gb_R" aria-label="Jesse Booth - Software Engineering Team Lead" role="button"
+            <a class="gb_b gb_eb gb_R" aria-label="Jesse Booth - Software Engineering Leader" role="button"
               tabindex="0"><span class="mario"></span></a>
           </div>
           <div class="gb_ub gb_aa" aria-label="Account Information" aria-hidden="true">
@@ -56,7 +56,7 @@ get rid of any js errors -->
               </div>
               <div class="gb_zb bold">
                 <div class="gb_Cb bold">Jesse Booth</div>
-                <div id="resume-name" class="bold">Software Engineering Team Lead</div>
+                <div id="resume-name" class="bold">Software Engineering Leader</div>
                 <div class="gb_Eb">256-797-6092</div>
                 <div class="gb_Eb">jesseboothua@gmail.com</div>
                 <a id="resume-download" class="gb_za gb_3f gbp1 gb_Pe gb_Fb"
@@ -138,7 +138,7 @@ get rid of any js errors -->
     <div class="content">
       <div class="title">
         <h1>Jesse Booth</h1>
-        <h2 id="resume-title">Software Engineering Team Lead</h2>
+        <h2 id="resume-title">Software Engineering Leader</h2>
       </div>
     </div>
     <iframe id="resume-iframe"
@@ -157,7 +157,7 @@ get rid of any js errors -->
     <div class="gb_xe">
       <div class="gb_we">
         <div>Jesse Booth</div>
-        <div>Software Engineering Team Lead</div>
+        <div>Software Engineering Leader</div>
         <div>256-797-6092</div>
         <div>jesseboothua@gmail.com</div>
       </div>
@@ -1611,18 +1611,27 @@ get rid of any js errors -->
     var resumeIframe = document.getElementById('resume-iframe');
 
     //jebjeb
-    if (resumeTitle.innerText === 'Principal Software Developer') {
-      resumeTitle.innerText = 'Software Engineering Team Lead';
-      resumeName.innerText = 'Software Engineering Team Lead';
-      resumeDownload.href = 'https://www.matrix.tools/api/resume/JesseBooth';
-      resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth&embedded=true';
-    } else if (1 === 1) {
+    if (resumeTitle.innerText === 'Software Engineering Leader') {
+      // Older / Shorter Resume
+      resumeTitle.innerText = 'Software Development Team Lead';
+      resumeName.innerText = 'Software Development Team Lead';
+      resumeDownload.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res.docx';
+      resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res.docx&embedded=true';
+    } else if (resumeTitle.innerText === 'Software Development Team Lead') {
       resumeTitle.innerText = 'Principal Software Developer';
       resumeName.innerText = 'Principal Software Developer';
-      resumeDownload.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume-PSD.docx';
-      resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume-PSD.docx&embedded=true';
+      resumeDownload.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx';
+      resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx&embedded=true';
+    } else if (resumeTitle.innerText === 'Principal Software Developer') {
+      resumeTitle.innerText = 'Senior Software Engineer';
+      resumeName.innerText = 'Senior Software Engineer';
+      resumeDownload.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume-SSE.docx';
+      resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume-SSE.docx&embedded=true';
     } else {
-
+      resumeTitle.innerText = 'Software Engineering Leader';
+      resumeName.innerText = 'Software Engineering Leader';
+      resumeDownload.href = 'https://www.matrix.tools/api/resume/JesseBooth';
+      resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth&embedded=true';
     }
   }
 </script>
