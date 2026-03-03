@@ -21,7 +21,7 @@
   <meta name="twitter:image" content="images/favicon.ico">
 </head>
 <body>
-  <header class="header gb_qb" id="gb" role="banner" aria-label="Site header">
+  <header class="header header-font-style" id="gb" role="banner" aria-label="Site header">
     <div class="main-menu"></div>
     <div class="inner-header gb_Dd gb_ce gb_Md gb_Ld gb_ee">
       <div class="gb_Bc gb_Xd gb_ze">
@@ -156,6 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   function triggerMario() {
     animateMario();
+    toggleResumes();
   }
   document.addEventListener('keydown', triggerMario);
   mario.addEventListener('click', triggerMario);
@@ -342,7 +343,7 @@ document.addEventListener('DOMContentLoaded', function () {
     flex: 1;
   }
 
-  .gb_qb {
+  .header-font-style {
     font: 13px/27px Roboto, RobotoDraft, Arial, sans-serif;
     z-index: 986;
   }
@@ -408,7 +409,7 @@ document.addEventListener('DOMContentLoaded', function () {
     display: none !important
   }
 
-  .gb_8a {
+  .visibility-hidden {
     visibility: hidden
   }
 
@@ -451,23 +452,23 @@ document.addEventListener('DOMContentLoaded', function () {
     display: block
   }
 
-  .gb_If {
+  .hidden-backdrop {
     position: absolute;
     right: 8px;
     top: 62px;
     z-index: -1
   }
 
-  .gb_bb .gb_aa {
+  .compact-mode .gb_aa {
     margin-top: -10px
   }
 
-  .gb_Dc {
+  .pos-relative {
     position: relative
   }
 
-  .gb_ie .gb_Dc,
-  .gb_ae .gb_Dc {
+  .gb_ie .pos-relative,
+  .gb_ae .pos-relative {
     float: right
   }
 
@@ -830,7 +831,7 @@ document.addEventListener('DOMContentLoaded', function () {
     color: inherit
   }
 
-  .gb_X {
+  .text-secondary {
     color: rgba(0, 0, 0, 0.87)
   }
 
@@ -1087,13 +1088,13 @@ document.addEventListener('DOMContentLoaded', function () {
     opacity: .85
   }
 
-  .gb_bb .gb_ab,
-  .gb_bb .gb_cb {
+  .compact-mode .gb_ab,
+  .compact-mode .gb_cb {
     line-height: 26px
   }
 
-  #gb#gb.gb_bb a.gb_ab,
-  .gb_bb .gb_cb {
+  #gb#gb.compact-mode a.gb_ab,
+  .compact-mode .gb_cb {
     font-size: 11px;
     height: auto
   }
@@ -1154,7 +1155,7 @@ document.addEventListener('DOMContentLoaded', function () {
     width: 30px !important
   }
 
-  .gb_lb.gb_8a {
+  .gb_lb.visibility-hidden {
     display: none
   }
 
@@ -1166,11 +1167,11 @@ document.addEventListener('DOMContentLoaded', function () {
     display: none;
   }
 
-  .gb_He {
+  .menu-hidden {
     display: none;
   }
 
-  .gb_hc {
+  .hidden-control {
     display: none;
   }
 
@@ -1417,11 +1418,11 @@ document.addEventListener('DOMContentLoaded', function () {
     border-radius: 50%
   }
 
-  .gb_He {
+  .menu-hidden {
     display: none;
   }
 
-  .gb_we {
+  .hidden-element {
     display: none;
   }
 
