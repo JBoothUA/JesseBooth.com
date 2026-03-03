@@ -97,12 +97,23 @@
   </main>
   <div ng-non-bindable="">
     <div class="gb_aa" id="gbsfw"></div>
-    <div class="gb_xe">
-      <div class="gb_we">
-        <div>Jesse Booth</div>
-        <div>Software Engineering Leader</div>
-        <div>256-797-6092</div>
-        <div>jesseboothua@gmail.com</div>
+    <div class="gb_xe" id="right-sidebar-popup">
+      <button class="right-sidebar-close" aria-label="Close sidebar" title="Close">×</button>
+      <div class="gb_we right-sidebar-content">
+        <div class="contact-card">
+          <div class="contact-name">Jesse Booth</div>
+          <div class="contact-title">Software Engineering Leader</div>
+          <div class="contact-divider"></div>
+          <div class="contact-item">
+            <span class="contact-label">Phone</span>
+            <span class="contact-value">256-797-6092</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">jesseboothua@gmail.com</span>
+          </div>
+          <a id="resume-download-sidebar" class="download-resume-btn" href="https://www.matrix.tools/api/resume/JesseBooth" title="Download Resume">Download Resume</a>
+        </div>
       </div>
     </div>
     <div class="gb_He">Red Yoshi - Development Blog</div>
@@ -160,6 +171,27 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   document.addEventListener('keydown', triggerMario);
   mario.addEventListener('click', triggerMario);
+
+  // Close button handler
+  const closeButton = document.querySelector('.right-sidebar-close');
+  const sidebar = document.getElementById('right-sidebar-popup');
+  if (closeButton && sidebar) {
+    closeButton.addEventListener('click', function() {
+      sidebar.classList.toggle('hidden');
+    });
+  }
+
+  // Right head button handler to toggle account menu
+  const rightHeaderButton = document.querySelector('.gb_b.gb_eb');
+  if (rightHeaderButton) {
+    rightHeaderButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      const container = this.closest('.gb_fb');
+      if (container) {
+        container.classList.toggle('gb_g');
+      }
+    });
+  }
 });
 </script>
 
@@ -1163,10 +1195,6 @@ document.addEventListener('DOMContentLoaded', function () {
     padding: 4px
   }
 
-  .gb_xe {
-    display: none;
-  }
-
   .menu-hidden {
     display: none;
   }
@@ -1180,14 +1208,204 @@ document.addEventListener('DOMContentLoaded', function () {
     position: fixed;
     right: 0;
     top: 80px;
-    width: 320px;
-    background: #1a1a1a;
+    width: 100%;
+    max-width: 380px;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
     color: #fff;
-    padding: 36px 32px;
-    box-shadow: -2px 0 12px rgba(0,0,0,0.15);
+    padding: 24px;
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.6), inset 1px 0 rgba(0, 255, 255, 0.1);
     overflow-y: auto;
     max-height: calc(100vh - 80px);
     z-index: 1000;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+    border-left: 2px solid rgba(0, 255, 255, 0.2);
+  }
+
+  .gb_xe.hidden {
+    transform: translateX(100%);
+    pointer-events: none;
+  }
+
+  .right-sidebar-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 255, 255, 0.15);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    color: #0ff;
+    font-size: 32px;
+    cursor: pointer;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    z-index: 10000;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  .right-sidebar-close:hover {
+    background-color: rgba(0, 255, 255, 0.25);
+    color: #fff;
+    border-color: rgba(0, 255, 255, 0.6);
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+  }
+
+  .right-sidebar-close:active {
+    background-color: rgba(0, 255, 255, 0.35);
+    transform: scale(0.95);
+  }
+
+  .right-sidebar-content {
+    padding-top: 8px;
+  }
+
+  .contact-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 8px;
+  }
+
+  .contact-name {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: #0ff;
+    margin-bottom: 8px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  }
+
+  .contact-title {
+    font-size: 14px;
+    color: #ccc;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .contact-divider {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(0, 255, 255, 0.3) 0%, rgba(0, 255, 255, 0) 100%);
+    margin: 8px 0 12px 0;
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .contact-item:last-child {
+    border-bottom: none;
+  }
+
+  .contact-label {
+    font-size: 11px;
+    color: #999;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  .contact-value {
+    font-size: 15px;
+    color: #fff;
+    font-weight: 500;
+    word-break: break-word;
+  }
+
+  .download-resume-btn {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.2) 0%, rgba(0, 255, 255, 0.1) 100%);
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    color: #0ff;
+    padding: 12px 16px;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 8px;
+    box-sizing: border-box;
+  }
+
+  .download-resume-btn:hover {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.3) 0%, rgba(0, 255, 255, 0.2) 100%);
+    border-color: rgba(0, 255, 255, 0.6);
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  .download-resume-btn:active {
+    transform: translateY(0);
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .gb_xe {
+      width: 100%;
+      max-width: 100%;
+      top: 56px;
+      max-height: calc(100vh - 56px);
+      padding: 20px;
+    }
+
+    .right-sidebar-close {
+      top: 12px;
+      right: 12px;
+      font-size: 24px;
+      width: 32px;
+      height: 32px;
+    }
+
+    .contact-name {
+      font-size: 18px;
+    }
+
+    .contact-title {
+      font-size: 13px;
+    }
+
+    .contact-value {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gb_xe {
+      padding: 16px;
+    }
+
+    .right-sidebar-content {
+      padding-top: 8px;
+    }
+
+    .contact-card {
+      gap: 16px;
+    }
+
+    .contact-item {
+      padding: 10px 0;
+    }
   }
 
   .LI-badge-container.horizontal.dark {
@@ -1695,6 +1913,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var resumeTitle = document.getElementById('resume-title');
     var resumeName = document.getElementById('resume-name');
     var resumeDownload = document.getElementById('resume-download');
+    var resumeDownloadSidebar = document.getElementById('resume-download-sidebar');
     var resumeIframe = document.getElementById('resume-iframe');
 
     if (resumeTitle.innerText === 'Software Engineering Leader') {
@@ -1702,21 +1921,25 @@ document.addEventListener('DOMContentLoaded', function () {
       resumeTitle.innerText = 'Software Development Team Lead';
       resumeName.innerText = 'Software Development Team Lead';
       resumeDownload.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res.docx';
+      if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res.docx';
       resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res.docx&embedded=true';
     } else if (resumeTitle.innerText === 'Software Development Team Lead') {
       resumeTitle.innerText = 'Principal Software Developer';
       resumeName.innerText = 'Principal Software Developer';
       resumeDownload.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx';
+      if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx';
       resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx&embedded=true';
     } else if (resumeTitle.innerText === 'Principal Software Developer') {
       resumeTitle.innerText = 'Senior Software Engineer';
       resumeName.innerText = 'Senior Software Engineer';
       resumeDownload.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume-SSE.docx';
+      if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume-SSE.docx';
       resumeIframe.src = 'https://docs.google.com/document/d/1ABnEYpZGzHP0kZVpjGRzjYHa8Qu8uk9jMU9PkEuAwI4';//jebjeb preview a downlaoded file stopped working
     } else {
       resumeTitle.innerText = 'Software Engineering Leader';
       resumeName.innerText = 'Software Engineering Leader';
       resumeDownload.href = 'https://www.matrix.tools/api/resume/JesseBooth';
+      if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth';
       resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth&embedded=true';
     }
   }
