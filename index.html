@@ -22,61 +22,67 @@
 </head>
 <body>
   <header class="header header-font-style" id="gb" role="banner" aria-label="Site header">
-    <div class="main-menu"></div>
-    <div class="inner-header gb_Dd gb_ce gb_Md gb_Ld gb_ee">
-      <div class="gb_Bc gb_Xd gb_ze">
-        <div class="circle-button" aria-expanded="false" aria-label="Main menu" role="button" tabindex="0">
-          <img class="margin-left" src="images/red-yoshi.png" />
-        </div>
-        <img src="images/mario.gif" alt="Mario profile image" class="profile-image" tabindex="0" aria-label="Mario profile image" />
-        <span class="black-text bold">Click Mario or Yoshi!</span>
-        <div class="circle-button gb_ic gb_7a" aria-label="Go back" role="button" tabindex="0">
-        </div>
-        <div class="circle-button gb_jc gb_7a" aria-label="Close" role="button" tabindex="0">
+    <div class="new-header-container">
+      <div class="header-left">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+        <div class="header-brand">
+          <img src="images/red-yoshi.png" alt="Yoshi" class="brand-icon" />
+          <div class="brand-text">
+            <h1>JESSE BOOTH</h1>
+            <p>ENGINEERING LEADER</p>
+          </div>
         </div>
       </div>
-      <div class="gb_Cc gb_jb gb_Bc gb_6d" ng-non-bindable="" data-ogsr-up="">
-        <div class="gb_fb gb_8c gb_Rg gb_R gb_Hf gb_ob">
-          <div class="gb_Pc gb_ib gb_Rg gb_R">
-            <a class="gb_b gb_eb gb_R" aria-label="Jesse Booth - Software Engineering Leader" role="button"
-              tabindex="0"><span class="mario"></span></a>
-          </div>
-          <div class="gb_ub gb_aa" aria-label="Account Information" aria-hidden="true">
-            <div class="gb_xb">
-              <div class="gb_yb gb_6f gb_Ab">
-                <div class="gb_Bb gbip bold" title="Profile Picture">
-                </div>
-              </div>
-              <div class="gb_zb bold">
-                <div class="gb_Cb bold">Jesse Booth</div>
-                <div id="resume-name" class="bold">Software Engineering Leader</div>
-                <div class="gb_Eb">256-797-6092</div>
-                <div class="gb_Eb">jesseboothua@gmail.com</div>
-                <a id="resume-download" class="gb_za gb_3f gbp1 gb_Pe gb_Fb"
-                  href="https://www.matrix.tools/api/resume/JesseBooth">Download Resume</a>
-              </div>
-            </div>
-          </div>
-        </div>
+      
+      <div class="header-center">
+        <img src="images/mario.gif" alt="Mario" class="mario-sprite" tabindex="0" title="Click to animate" />
+      </div>
+      
+      <div class="header-right">
+        <button class="profile-toggle" aria-label="Open profile" aria-expanded="false">
+          <span class="profile-icon">▤</span>
+        </button>
+        <div class="status-indicator"></div>
       </div>
     </div>
-    <div class="gb_Nd gb_ce gb_ee" style="background-color:#00f"></div>
   </header>
-  <div class="slide-menu" ng-non-bindable="">
-    <nav class="gb_ie clean-menu" aria-label="Sidebar">
-      <div class="gb_9b">
-        <div class="nametag name"><span class="border-bottom">Jesse Booth</span></div>
-        <p class="menu-desc">Development Leader, Azure and Angular Architect, Google Enthusiast, Dog Lover</p>
-        <ul class="menu-list">
-          <li><a href="https://www.linkedin.com/in/jboothua" target="_blank" title="LinkedIn"><img src="images/SAFe.jpg" alt="SAFe Certification" style="height:32px;vertical-align:middle;margin-right:12px;">LinkedIn</a></li>
-          <li><a href="https://stackblitz.com/@JBoothUA" target="_blank" title="StackBlitz"><img class="stackblitz" alt="StackBlitz" src="https://c.staticblitz.com/assets/blitz_logo-8cdef1d0bba1bc528b77ed45e932e1dbab139be42559cc78b4ed506cb2f698b2.png" style="height:32px;vertical-align:middle;margin-right:12px;">StackBlitz</a></li>
-          <li><a href="https://github.com/JBoothUA" target="_blank" title="Github"><svg height="32" width="32" viewBox="0 0 16 16" aria-hidden="true" style="vertical-align:middle;margin-right:12px;"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>Github</a></li>
-          <li><a href="https://stackoverflow.com/users/8946627/jboothua" target="_blank" title="Stack Overflow"><img src="https://stackoverflow.com/users/flair/8946627.png?theme=dark" alt="Stack Overflow Flair" style="height:32px;vertical-align:middle;margin-right:12px;">Stack Overflow</a></li>
-        </ul>
-      </div>
+  <aside class="sidebar-menu" aria-label="Navigation menu">
+    <div class="sidebar-header">
+      <div class="sidebar-title">NETWORK</div>
+      <button class="sidebar-close" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="https://www.linkedin.com/in/jboothua" target="_blank" class="nav-link" rel="noreferrer">
+        <img src="images/SAFe.jpg" alt="SAFe Cert" class="nav-icon"/>
+        <span>LinkedIn</span>
+        <span class="nav-arrow">→</span>
+      </a>
+      <a href="https://stackblitz.com/@JBoothUA" target="_blank" class="nav-link" rel="noreferrer">
+        <img class="nav-icon stackblitz" alt="StackBlitz" src="https://c.staticblitz.com/assets/blitz_logo-8cdef1d0bba1bc528b77ed45e932e1dbab139be42559cc78b4ed506cb2f698b2.png"/>
+        <span>StackBlitz</span>
+        <span class="nav-arrow">→</span>
+      </a>
+      <a href="https://github.com/JBoothUA" target="_blank" class="nav-link" rel="noreferrer">
+        <svg height="20" width="20" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+        <span>GitHub</span>
+        <span class="nav-arrow">→</span>
+      </a>
+      <a href="https://stackoverflow.com/users/8946627/jboothua" target="_blank" class="nav-link" rel="noreferrer">
+        <img src="https://stackoverflow.com/users/flair/8946627.png?theme=dark" alt="Stack Overflow" class="nav-icon"/>
+        <span>Stack Overflow</span>
+        <span class="nav-arrow">→</span>
+      </a>
     </nav>
-    <div class="slide-menu-placeholder"></div>
-  </div>
+    <div class="sidebar-footer">
+      <p>Development Leader • Azure & Angular Architect • Google Enthusiast</p>
+    </div>
+  </aside>
   <main class="main" role="main">
     <section class="content">
       <div class="title">
@@ -97,35 +103,44 @@
   </main>
   <div ng-non-bindable="">
     <div class="gb_aa" id="gbsfw"></div>
-    <div class="gb_xe" id="right-sidebar-popup">
-      <div class="gb_we right-sidebar-content">
-        <div class="contact-card">
-          <div class="contact-name">Jesse Booth</div>
-          <div class="contact-title">Software Engineering Leader</div>
-          <div class="contact-divider"></div>
-          <div class="contact-item">
-            <span class="contact-label">Phone</span>
-            <span class="contact-value">256-797-6092</span>
+    <div class="profile-panel" id="profile-drawer">
+      <div class="profile-header">
+        <h2>PROFILE</h2>
+        <button class="profile-close" aria-label="Close profile">✕</button>
+      </div>
+      <div class="profile-body">
+        <div class="profile-avatar">J</div>
+        <h3>Jesse Booth</h3>
+        <p class="profile-role">Principal Software Developer</p>
+        <p class="profile-description">Azure & Angular Architect | Cloud Engineer | Technical Leader</p>
+        
+        <div class="profile-divider"></div>
+        
+        <div class="profile-info">
+          <div class="info-block">
+            <label>Phone</label>
+            <a href="tel:256-797-6092">256-797-6092</a>
           </div>
-          <div class="contact-item">
-            <span class="contact-label">Email</span>
-            <span class="contact-value">jesseboothua@gmail.com</span>
+          <div class="info-block">
+            <label>Email</label>
+            <a href="mailto:jesseboothua@gmail.com">jesseboothua@gmail.com</a>
           </div>
-          <a id="resume-download-sidebar" class="download-resume-btn" href="https://www.matrix.tools/api/resume/JesseBooth" title="Download Resume">Download Resume</a>
         </div>
+        
+        <a href="https://www.matrix.tools/api/resume/JesseBooth" class="profile-cta">Download Resume</a>
       </div>
     </div>
     <div class="gb_He">Red Yoshi - Development Blog</div>
     <div class="gb_hc">Menu</div>
   </div>
 <script>
-// Mario animation: runs slowly to right and jumps on key press or click
+// Interactive UI with Mario animation
 document.addEventListener('DOMContentLoaded', function () {
-  const mario = document.querySelector('img.profile-image');
+  const mario = document.querySelector('.mario-sprite');
   if (!mario) return;
-  mario.setAttribute('tabindex', '0');
-  mario.setAttribute('aria-label', 'Mario profile image');
+
   let moving = false;
+  
   function animateMario() {
     if (moving) return;
     moving = true;
@@ -139,10 +154,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const startTime = performance.now();
     mario.style.position = 'fixed';
     mario.style.zIndex = '9999';
+    
     function step(now) {
       let t = Math.min((now - startTime) / moveDuration, 1);
       marioX = startX + (endX - startX) * t;
-      // Jump arc: Mario jumps once at 1/3 of the way
       if (t < 0.33) {
         marioY = startY - 60 * Math.sin(Math.PI * t / 0.33);
       } else if (t < 0.66) {
@@ -164,38 +179,580 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     requestAnimationFrame(step);
   }
-  function triggerMario() {
-    animateMario();
-    toggleResumes();
-  }
-  document.addEventListener('keydown', triggerMario);
-  mario.addEventListener('click', triggerMario);
 
-  // Close button handler
-  const closeButton = document.querySelector('.right-sidebar-close');
-  const sidebar = document.getElementById('right-sidebar-popup');
-  if (closeButton && sidebar) {
-    closeButton.addEventListener('click', function() {
-      sidebar.classList.toggle('hidden');
-    });
-  }
+  mario.addEventListener('click', animateMario);
+  document.addEventListener('keydown', function(e) {
+    if (e.code === 'Space' || e.code === 'Enter') {
+      animateMario();
+    }
+  });
 
-  // Right head button handler to toggle account menu
-  const rightHeaderButton = document.querySelector('.gb_b.gb_eb');
-  if (rightHeaderButton) {
-    rightHeaderButton.addEventListener('click', function(e) {
-      e.preventDefault();
-      const container = this.closest('.gb_fb');
-      if (container) {
-        container.classList.toggle('gb_g');
-      }
+  // Sidebar menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const sidebar = document.querySelector('.sidebar-menu');
+  const sidebarClose = document.querySelector('.sidebar-close');
+
+  menuToggle?.addEventListener('click', function() {
+    sidebar.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', sidebar.classList.contains('active'));
+  });
+
+  sidebarClose?.addEventListener('click', function() {
+    sidebar.classList.remove('active');
+    menuToggle?.setAttribute('aria-expanded', false);
+  });
+
+  // Close sidebar when clicking links
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      sidebar?.classList.remove('active');
+      menuToggle?.setAttribute('aria-expanded', false);
     });
-  }
+  });
+
+  // Profile panel toggle
+  const profileToggle = document.querySelector('.profile-toggle');
+  const profilePanel = document.querySelector('.profile-panel');
+  const profileClose = document.querySelector('.profile-close');
+
+  profileToggle?.addEventListener('click', function() {
+    profilePanel.classList.toggle('active');
+    profileToggle.setAttribute('aria-expanded', profilePanel.classList.contains('active'));
+  });
+
+  profileClose?.addEventListener('click', function() {
+    profilePanel.classList.remove('active');
+    profileToggle?.setAttribute('aria-expanded', false);
+  });
+
+  // Close profile when clicking resume button
+  document.querySelector('.profile-cta')?.addEventListener('click', () => {
+    profilePanel?.classList.remove('active');
+    profileToggle?.setAttribute('aria-expanded', false);
+  });
+
+  // Close menus when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!sidebar?.contains(e.target) && !menuToggle?.contains(e.target)) {
+      sidebar?.classList.remove('active');
+      menuToggle?.setAttribute('aria-expanded', false);
+    }
+    if (!profilePanel?.contains(e.target) && !profileToggle?.contains(e.target)) {
+      profilePanel?.classList.remove('active');
+      profileToggle?.setAttribute('aria-expanded', false);
+    }
+  });
 });
 </script>
 
 <style>
-    .clean-menu {
+  /* NEW HEADER STYLES */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+    border-bottom: 3px solid #0ff;
+    z-index: 990;
+    min-width: 320px;
+  }
+
+  .new-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    max-width: 100%;
+    gap: 20px;
+  }
+
+  .header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 0 0 auto;
+  }
+
+  .header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu-toggle, .profile-toggle {
+    background: rgba(0, 255, 255, 0.1);
+    border: 2px solid #0ff;
+    color: #0ff;
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    font-size: 18px;
+  }
+
+  .menu-toggle:hover, .profile-toggle:hover {
+    background: rgba(0, 255, 255, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+  }
+
+  .menu-toggle:active, .profile-toggle:active {
+    transform: scale(0.95);
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .hamburger span {
+    width: 20px;
+    height: 2px;
+    background: #0ff;
+    transition: all 0.3s ease;
+    display: block;
+  }
+
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 280px;
+  }
+
+  .brand-icon {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+  }
+
+  .brand-text {
+    display: none;
+  }
+
+  .brand-text h1 {
+    font-size: 16px;
+    color: #0ff;
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+
+  .brand-text p {
+    font-size: 11px;
+    color: #999;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .mario-sprite {
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.4));
+  }
+
+  .mario-sprite:hover {
+    transform: scale(1.1);
+  }
+
+  .status-indicator {
+    width: 12px;
+    height: 12px;
+    background: #0f0;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  /* SIDEBAR MENU */
+  .sidebar-menu {
+    position: fixed;
+    left: 0;
+    top: 64px;
+    width: 280px;
+    height: calc(100vh - 64px);
+    background: linear-gradient(135deg, #0a0e27 0%, #151b2f 100%);
+    border-right: 2px solid #0ff;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 980;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-menu.active {
+    transform: translateX(0);
+  }
+
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid rgba(0, 255, 255, 0.2);
+    gap: 12px;
+  }
+
+  .sidebar-title {
+    font-size: 14px;
+    font-weight: 900;
+    color: #0ff;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+
+  .sidebar-close {
+    background: none;
+    border: none;
+    color: #0ff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    font-weight: 900;
+  }
+
+  .sidebar-close::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .sidebar-close:hover {
+    transform: rotate(90deg) scale(1.3);
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 40px rgba(0, 255, 255, 0.4);
+    filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.6));
+  }
+
+  .sidebar-close:hover::before {
+    opacity: 1;
+    animation: pulseRing 0.6s ease-out;
+  }
+
+  .sidebar-close:active {
+    transform: rotate(90deg) scale(0.9);
+  }
+
+  .sidebar-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 12px 0;
+    overflow-y: auto;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+    position: relative;
+  }
+
+  .nav-link:hover {
+    background: rgba(0, 255, 255, 0.05);
+    color: #0ff;
+    border-left-color: #0ff;
+    padding-left: 24px;
+  }
+
+  .nav-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  .nav-arrow {
+    margin-left: auto;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .nav-link:hover .nav-arrow {
+    opacity: 1;
+  }
+
+  .sidebar-footer {
+    padding: 20px;
+    border-top: 2px solid rgba(0, 255, 255, 0.2);
+    font-size: 11px;
+    color: #666;
+    line-height: 1.4;
+  }
+
+  /* PROFILE PANEL */
+  .profile-panel {
+    position: fixed;
+    right: 0;
+    top: 64px;
+    width: 100%;
+    max-width: 340px;
+    height: calc(100vh - 64px);
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+    border-left: 2px solid #0ff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 980;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-panel.active {
+    transform: translateX(0);
+  }
+
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid rgba(0, 255, 255, 0.2);
+    gap: 12px;
+  }
+
+  .profile-header h2 {
+    font-size: 14px;
+    font-weight: 900;
+    color: #0ff;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+
+  .profile-close {
+    background: none;
+    border: none;
+    color: #0ff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    font-weight: 900;
+  }
+
+  .profile-close::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .profile-close:hover {
+    transform: rotate(90deg) scale(1.3);
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 40px rgba(0, 255, 255, 0.4);
+    filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.6));
+  }
+
+  .profile-close:hover::before {
+    opacity: 1;
+    animation: pulseRing 0.6s ease-out;
+  }
+
+  .profile-close:active {
+    transform: rotate(90deg) scale(0.9);
+  }
+
+  @keyframes pulseRing {
+    0% {
+      transform: scale(0.5);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  .profile-body {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .profile-avatar {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #0ff, #0cc);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 900;
+    color: #000;
+  }
+
+  .profile-body h3 {
+    font-size: 18px;
+    color: #0ff;
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+  }
+
+  .profile-role {
+    font-size: 13px;
+    color: #999;
+    margin: 4px 0 0 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .profile-description {
+    font-size: 12px;
+    color: #bbb;
+    line-height: 1.5;
+    margin: 8px 0 0 0;
+  }
+
+  .profile-divider {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(0, 255, 255, 0.3), transparent);
+    margin: 8px 0;
+  }
+
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .info-block label {
+    font-size: 10px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+  }
+
+  .info-block a {
+    color: #0ff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .info-block a:hover {
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+  }
+
+  .profile-cta {
+    display: block;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 255, 255, 0.1));
+    border: 2px solid #0ff;
+    color: #0ff;
+    padding: 12px 16px;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 8px;
+  }
+
+  .profile-cta:hover {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(0, 255, 255, 0.2));
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .profile-cta:active {
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .header-brand {
+      max-width: none;
+    }
+
+    .brand-text {
+      display: block;
+    }
+
+    .header-center {
+      display: none;
+    }
+
+    .profile-panel {
+      max-width: 100%;
+    }
+
+    .sidebar-menu {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .new-header-container {
+      padding: 10px 12px;
+    }
+
+    .menu-toggle, .profile-toggle {
+      width: 40px;
+      height: 40px;
+    }
+
+    .profile-body {
+      padding: 16px;
+    }
+  }
+
+  /* OLD STYLES - Keep for structure integrity */
       background: #111;
       color: #fff;
       padding: 32px 0 32px 0;
@@ -1911,7 +2468,6 @@ document.addEventListener('DOMContentLoaded', function () {
   function toggleResumes() {
     var resumeTitle = document.getElementById('resume-title');
     var resumeName = document.getElementById('resume-name');
-    var resumeDownload = document.getElementById('resume-download');
     var resumeDownloadSidebar = document.getElementById('resume-download-sidebar');
     var resumeIframe = document.getElementById('resume-iframe');
 
@@ -1919,25 +2475,21 @@ document.addEventListener('DOMContentLoaded', function () {
       // Older / Shorter Resume
       resumeTitle.innerText = 'Software Development Team Lead';
       resumeName.innerText = 'Software Development Team Lead';
-      resumeDownload.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res.docx';
       if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res.docx';
       resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res.docx&embedded=true';
     } else if (resumeTitle.innerText === 'Software Development Team Lead') {
       resumeTitle.innerText = 'Principal Software Developer';
       resumeName.innerText = 'Principal Software Developer';
-      resumeDownload.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx';
       if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx';
       resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx&embedded=true';
     } else if (resumeTitle.innerText === 'Principal Software Developer') {
       resumeTitle.innerText = 'Senior Software Engineer';
       resumeName.innerText = 'Senior Software Engineer';
-      resumeDownload.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume-SSE.docx';
       if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume-SSE.docx';
-      resumeIframe.src = 'https://docs.google.com/document/d/1ABnEYpZGzHP0kZVpjGRzjYHa8Qu8uk9jMU9PkEuAwI4';//jebjeb preview a downlaoded file stopped working
+      resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume-SSE.docx';
     } else {
       resumeTitle.innerText = 'Software Engineering Leader';
       resumeName.innerText = 'Software Engineering Leader';
-      resumeDownload.href = 'https://www.matrix.tools/api/resume/JesseBooth';
       if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth';
       resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth&embedded=true';
     }
