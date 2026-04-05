@@ -26,17 +26,19 @@
       <div class="header-left">
         <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
           <svg class="network-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <!-- Connecting lines -->
-            <line x1="24" y1="24" x2="12" y2="8" class="network-line" />
-            <line x1="24" y1="24" x2="36" y2="8" class="network-line" />
-            <line x1="24" y1="24" x2="12" y2="40" class="network-line" />
-            <line x1="24" y1="24" x2="36" y2="40" class="network-line" />
-            <!-- Nodes -->
-            <circle cx="24" cy="24" r="4" class="network-node center-node" />
-            <circle cx="12" cy="8" r="3" class="network-node" />
-            <circle cx="36" cy="8" r="3" class="network-node" />
-            <circle cx="12" cy="40" r="3" class="network-node" />
-            <circle cx="36" cy="40" r="3" class="network-node" />
+            <!-- Central core -->
+            <circle cx="24" cy="24" r="3" class="network-core" />
+            <!-- Inner ring -->
+            <circle cx="24" cy="24" r="8" class="network-ring" />
+            <!-- Outer ring -->
+            <circle cx="24" cy="24" r="14" class="network-ring" />
+            <!-- Orbiting nodes -->
+            <g class="orbital-nodes">
+              <circle cx="32" cy="24" r="2.5" class="network-node" />
+              <circle cx="24" cy="38" r="2.5" class="network-node" />
+              <circle cx="16" cy="24" r="2.5" class="network-node" />
+              <circle cx="24" cy="10" r="2.5" class="network-node" />
+            </g>
           </svg>
         </button>
         <div class="header-brand">
@@ -119,8 +121,8 @@
       <div class="profile-body">
         <div class="profile-avatar">J</div>
         <h3>Jesse Booth</h3>
-        <p class="profile-role">Principal Software Developer</p>
-        <p class="profile-description">Azure & Angular Architect | Cloud Engineer | Technical Leader</p>
+        <p class="profile-role">Software Development Leader</p>
+        <p class="profile-description">Azure and Angular Architect, Google Enthusiast, Dog Lover</p>
         
         <div class="profile-divider"></div>
         
@@ -299,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function () {
     color: #0ff;
     width: 44px;
     height: 44px;
-    border-radius: 8px;
+    border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -336,97 +338,88 @@ document.addEventListener('DOMContentLoaded', function () {
     display: block;
   }
 
-  .network-line {
+  .network-ring {
     stroke: #0ff;
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    opacity: 0.6;
+    stroke-width: 1;
+    fill: none;
+    opacity: 0.5;
     transition: all 0.3s ease;
   }
 
-  .network-node {
+  .network-core {
     fill: #0ff;
     opacity: 0.8;
     transition: all 0.3s ease;
   }
 
-  .center-node {
-    opacity: 1;
-    r: 5;
+  .network-node {
+    fill: #0ff;
+    opacity: 0.7;
+    transition: all 0.3s ease;
   }
 
-  .menu-toggle:hover .network-line {
-    stroke-width: 2;
-    opacity: 0.9;
+  .orbital-nodes {
+    transform-origin: 24px 24px;
+    transform: rotate(0deg);
+  }
+
+  .menu-toggle:hover .network-ring {
+    stroke-width: 1.5;
+    opacity: 0.8;
+  }
+
+  .menu-toggle:hover .network-core {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.8));
   }
 
   .menu-toggle:hover .network-node {
     opacity: 1;
-    filter: drop-shadow(0 0 4px rgba(0, 255, 255, 0.6));
+    filter: drop-shadow(0 0 3px rgba(0, 255, 255, 0.6));
   }
 
-  .menu-toggle:hover .center-node {
-    r: 6;
-    filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.8));
+  /* Orbital rotation when menu is active */
+  .menu-toggle[aria-expanded="true"] .orbital-nodes {
+    animation: orbitalRotate 3s linear infinite;
   }
 
-  /* Connectivity effect when menu is active */
-  .menu-toggle[aria-expanded="true"] .network-line {
-    animation: pulseConnectivity 0.8s ease-in-out infinite;
+  .menu-toggle[aria-expanded="true"] .network-ring {
+    animation: ringPulse 2s ease-in-out infinite;
   }
 
-  .menu-toggle[aria-expanded="true"] .network-node {
-    animation: nodePulse 1.2s ease-in-out infinite;
+  .menu-toggle[aria-expanded="true"] .network-core {
+    animation: corePulse 1.5s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.9));
   }
 
-  .menu-toggle[aria-expanded="true"] .center-node {
-    animation: centerPulse 0.6s ease-in-out infinite;
-    filter: drop-shadow(0 0 12px rgba(0, 255, 255, 1));
-  }
-
-  @keyframes pulseConnectivity {
+  @keyframes orbitalRotate {
     0% {
-      stroke-width: 1.5;
-      opacity: 0.6;
-    }
-    50% {
-      stroke-width: 2.5;
-      opacity: 1;
+      transform: rotate(0deg);
     }
     100% {
-      stroke-width: 1.5;
-      opacity: 0.6;
+      transform: rotate(360deg);
     }
   }
 
-  @keyframes nodePulse {
-    0% {
-      r: 3;
-      opacity: 0.8;
+  @keyframes ringPulse {
+    0%, 100% {
+      stroke-width: 1;
+      r: 8 14;
+      opacity: 0.5;
     }
     50% {
-      r: 4;
-      opacity: 1;
-      filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.8));
-    }
-    100% {
-      r: 3;
+      stroke-width: 1.5;
       opacity: 0.8;
     }
   }
 
-  @keyframes centerPulse {
-    0% {
-      r: 5;
-      opacity: 1;
+  @keyframes corePulse {
+    0%, 100% {
+      r: 3;
+      opacity: 0.8;
     }
     50% {
-      r: 7;
-      opacity: 0.6;
-      filter: drop-shadow(0 0 16px rgba(0, 255, 255, 0.6));
-    }
-    100% {
-      r: 5;
+      r: 4.5;
       opacity: 1;
     }
   }
