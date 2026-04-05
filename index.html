@@ -56,7 +56,15 @@
       
       <div class="header-right">
         <button class="profile-toggle" aria-label="Open profile" aria-expanded="false">
-          <span class="profile-icon">▤</span>
+          <svg class="profile-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <!-- User head -->
+            <circle cx="24" cy="14" r="6" class="profile-head" />
+            <!-- User body -->
+            <path d="M 24 22 Q 16 26 14 34 L 34 34 Q 32 26 24 22 Z" class="profile-body" />
+            <!-- Expanding squares -->
+            <rect x="8" y="8" width="32" height="32" class="profile-square" />
+            <rect x="4" y="4" width="40" height="40" class="profile-square" />
+          </svg>
         </button>
         <div class="status-indicator"></div>
       </div>
@@ -421,6 +429,85 @@ document.addEventListener('DOMContentLoaded', function () {
     50% {
       r: 4.5;
       opacity: 1;
+    }
+  }
+
+  /* Profile Button Styles */
+  .profile-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+
+  .profile-head {
+    fill: #0ff;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+  }
+
+  .profile-body {
+    fill: #0ff;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+
+  .profile-square {
+    stroke: #0ff;
+    stroke-width: 1;
+    fill: none;
+    opacity: 0.4;
+    transition: all 0.3s ease;
+  }
+
+  .profile-toggle:hover .profile-head {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.8));
+  }
+
+  .profile-toggle:hover .profile-body {
+    opacity: 1;
+    filter: drop-shadow(0 0 4px rgba(0, 255, 255, 0.6));
+  }
+
+  .profile-toggle:hover .profile-square {
+    stroke-width: 1.5;
+    opacity: 0.6;
+  }
+
+  /* Expanding pulse when profile is active */
+  .profile-toggle[aria-expanded="true"] .profile-square:nth-child(3) {
+    animation: squareExpand 1.2s ease-in-out infinite;
+  }
+
+  .profile-toggle[aria-expanded="true"] .profile-square:nth-child(4) {
+    animation: squareExpand 1.2s ease-in-out infinite 0.3s;
+  }
+
+  .profile-toggle[aria-expanded="true"] .profile-head,
+  .profile-toggle[aria-expanded="true"] .profile-body {
+    animation: userPulse 0.8s ease-in-out infinite;
+    filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.7));
+  }
+
+  @keyframes squareExpand {
+    0%, 100% {
+      stroke-width: 1;
+      opacity: 0.3;
+    }
+    50% {
+      stroke-width: 1.5;
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes userPulse {
+    0%, 100% {
+      opacity: 0.8;
+      filter: drop-shadow(0 0 4px rgba(0, 255, 255, 0.4));
+    }
+    50% {
+      opacity: 1;
+      filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.8));
     }
   }
 
