@@ -624,6 +624,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  @keyframes sidebarGlow {
+    0%, 100% {
+      box-shadow: 8px 0 48px rgba(0, 255, 255, 0.3), 8px 0 80px rgba(0, 255, 255, 0.15);
+    }
+    50% {
+      box-shadow: 8px 0 70px rgba(0, 255, 255, 0.5), 8px 0 120px rgba(0, 255, 255, 0.25);
+    }
+  }
+
+  @keyframes profilePanelGlow {
+    0%, 100% {
+      box-shadow: -8px 0 48px rgba(0, 255, 255, 0.3), -8px 0 80px rgba(0, 255, 255, 0.15);
+    }
+    50% {
+      box-shadow: -8px 0 70px rgba(0, 255, 255, 0.5), -8px 0 120px rgba(0, 255, 255, 0.25);
+    }
+  }
+
   .hamburger {
     display: none;
   }
@@ -729,6 +747,8 @@ document.addEventListener('DOMContentLoaded', function () {
   .sidebar-menu.active {
     transform: translateX(0);
     border-right-color: #0ff;
+    box-shadow: 8px 0 48px rgba(0, 255, 255, 0.3), 8px 0 80px rgba(0, 255, 255, 0.15);
+    animation: sidebarGlow 2s ease-in-out infinite;
   }
 
   .sidebar-header {
@@ -913,6 +933,8 @@ document.addEventListener('DOMContentLoaded', function () {
   .profile-panel.active {
     transform: translateX(0);
     border-left-color: #0ff;
+    box-shadow: -8px 0 48px rgba(0, 255, 255, 0.3), -8px 0 80px rgba(0, 255, 255, 0.15);
+    animation: profilePanelGlow 2s ease-in-out infinite;
   }
 
   .profile-header {
