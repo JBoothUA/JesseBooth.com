@@ -3012,24 +3012,20 @@ document.addEventListener('DOMContentLoaded', function () {
 <script id="jb-custom-scripts">
   function toggleResumes() {
     var resumeTitle = document.getElementById('resume-title');
-    var resumeName = document.getElementById('resume-name');
     var resumeDownloadSidebar = document.getElementById('resume-download-sidebar');
     var resumeIframe = document.getElementById('resume-iframe');
 
     if (resumeTitle.innerText === 'Software Engineering Leader') {
       // Shorter Resume
       resumeTitle.innerText = 'Software Development Team Lead';
-      resumeName.innerText = 'Software Development Team Lead';
       if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res.docx';
       resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res.docx&embedded=true';
     } else if (resumeTitle.innerText === 'Software Development Team Lead') {
       resumeTitle.innerText = 'Principal Software Developer';
-      resumeName.innerText = 'Principal Software Developer';
-      if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume-PSD.docx';
-      resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume-PSD.docx&embedded=true';
+      if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx';
+      resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx&embedded=true';
     } else {
       resumeTitle.innerText = 'Software Engineering Leader';
-      resumeName.innerText = 'Software Engineering Leader';
       if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume.docx';
       resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume.docx&embedded=true';
     }
