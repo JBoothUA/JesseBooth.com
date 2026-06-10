@@ -205,6 +205,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // Wire toggleResumes to red yoshi image
+  const brandIcon = document.querySelector('.brand-icon');
+  brandIcon?.addEventListener('click', toggleResumes);
+
   // Sidebar menu toggle
   const menuToggle = document.querySelector('.menu-toggle');
   const sidebar = document.querySelector('.sidebar-menu');
@@ -3013,7 +3017,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var resumeIframe = document.getElementById('resume-iframe');
 
     if (resumeTitle.innerText === 'Software Engineering Leader') {
-      // Older / Shorter Resume
+      // Shorter Resume
       resumeTitle.innerText = 'Software Development Team Lead';
       resumeName.innerText = 'Software Development Team Lead';
       if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res.docx';
@@ -3021,18 +3025,13 @@ document.addEventListener('DOMContentLoaded', function () {
     } else if (resumeTitle.innerText === 'Software Development Team Lead') {
       resumeTitle.innerText = 'Principal Software Developer';
       resumeName.innerText = 'Principal Software Developer';
-      if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx';
-      resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx&embedded=true';
-    } else if (resumeTitle.innerText === 'Principal Software Developer') {
-      resumeTitle.innerText = 'Senior Software Engineer';
-      resumeName.innerText = 'Senior Software Engineer';
-      if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume-SSE.docx';
-      resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume-SSE.docx';
+      if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume-PSD.docx';
+      resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume-PSD.docx&embedded=true';
     } else {
       resumeTitle.innerText = 'Software Engineering Leader';
       resumeName.innerText = 'Software Engineering Leader';
-      if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth';
-      resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth&embedded=true';
+      if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume.docx';
+      resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume.docx&embedded=true';
     }
   }
 </script>
