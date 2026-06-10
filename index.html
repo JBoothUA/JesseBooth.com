@@ -145,7 +145,7 @@
           </div>
         </div>
         
-        <a href="https://www.matrix.tools/api/resume/JesseBooth" class="profile-cta">Download Resume</a>
+        <a href="https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume.docx" class="profile-cta">Download Resume</a>
       </div>
     </div>
     <div class="gb_He">Red Yoshi - Development Blog</div>
@@ -3014,19 +3014,23 @@ document.addEventListener('DOMContentLoaded', function () {
     var resumeTitle = document.getElementById('resume-title');
     var resumeDownloadSidebar = document.getElementById('resume-download-sidebar');
     var resumeIframe = document.getElementById('resume-iframe');
+    var profileCta = document.querySelector('.profile-cta');
 
     if (resumeTitle.innerText === 'Software Engineering Leader') {
       // Shorter Resume
       resumeTitle.innerText = 'Software Development Team Lead';
       if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res.docx';
+      if (profileCta) profileCta.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res.docx';
       resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res.docx&embedded=true';
     } else if (resumeTitle.innerText === 'Software Development Team Lead') {
       resumeTitle.innerText = 'Principal Software Developer';
       if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx';
+      if (profileCta) profileCta.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx';
       resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx&embedded=true';
     } else {
       resumeTitle.innerText = 'Software Engineering Leader';
       if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume.docx';
+      if (profileCta) profileCta.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume.docx';
       resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume.docx&embedded=true';
     }
   }
