@@ -103,9 +103,11 @@
   </aside>
   <main class="main" role="main">
     <section class="content">
+      <div class="hero-banner">
+        <img src="images/Jesse-Booth-Banner.png" alt="Jesse Booth Banner" class="banner-image" />
+      </div>
       <div class="title">
-        <h1>Jesse Booth</h1>
-        <h2 id="resume-title">Software Engineering Leader</h2>
+        <h1 hidden id="resume-title">Software Engineering Leader</h1>
       </div>
       <iframe id="resume-iframe" title="Resume PDF preview"
         src="https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth&embedded=true" style="width:100vw;height:80vh;min-height:400px;border:none;display:block;margin:0 auto;"></iframe>
@@ -298,6 +300,10 @@ document.addEventListener('DOMContentLoaded', function () {
     align-items: center;
     gap: 16px;
     flex: 0 0 auto;
+  }
+
+  .title {
+    display: none;
   }
 
   .header-center {
@@ -1476,6 +1482,25 @@ document.addEventListener('DOMContentLoaded', function () {
     flex: 1;
   }
 
+  .hero-banner {
+    width: 38%;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.05) 0%, rgba(0, 204, 204, 0.05) 100%);
+  }
+
+  .banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
   .header-font-style {
     font: 13px/27px Roboto, RobotoDraft, Arial, sans-serif;
     z-index: 986;
@@ -2470,6 +2495,11 @@ document.addEventListener('DOMContentLoaded', function () {
       padding: 20px;
     }
 
+    .hero-banner {
+      width: 100%;
+      margin-top: 25px;
+    }
+
     .right-sidebar-close {
       top: 12px;
       right: 12px;
@@ -2494,6 +2524,11 @@ document.addEventListener('DOMContentLoaded', function () {
   @media (max-width: 480px) {
     .gb_xe {
       padding: 16px;
+    }
+
+    .hero-banner {
+      width: 100%;
+      margin-top: 25px;
     }
 
     .right-sidebar-content {
@@ -3027,6 +3062,11 @@ document.addEventListener('DOMContentLoaded', function () {
       if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx';
       if (profileCta) profileCta.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx';
       resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx&embedded=true';
+    } else if (resumeTitle.innerText === 'Principal Software Developer') {
+      resumeTitle.innerText = 'Software Engineering Manager';
+      if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-SEM.pdf';
+      if (profileCta) profileCta.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-SEM.pdf';
+      resumeIframe.src = 'https://docs.google.com/gview?url=www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-SEM.pdf&embedded=true';
     } else {
       resumeTitle.innerText = 'Software Engineering Leader';
       if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume.docx';
