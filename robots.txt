@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /aspnet_client
+Disallow: /301
+Disallow: /music
 
 Sitemap: https://jessebooth.com/sitemap.xml
