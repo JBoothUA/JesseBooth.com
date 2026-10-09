@@ -51,12 +51,13 @@
           </svg>
         </button>
         <div class="header-brand">
-          <img src="images/red-yoshi.png" alt="" class="brand-icon" />
+          <img src="images/red-yoshi.png" alt="" class="brand-icon" style="cursor:pointer" title="Click to switch resume" />
           <div class="brand-text">
             <h1>JESSE BOOTH</h1>
             <p>ENGINEERING LEADER</p>
           </div>
         </div>
+        <a class="header-resume-btn" href="https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume.docx" download aria-label="Download resume">Resume &#8595;</a>
       </div>
       
       <div class="header-center">
@@ -75,8 +76,6 @@
             <rect x="4" y="4" width="40" height="40" class="profile-square" />
           </svg>
         </button>
-        <a class="header-resume-btn" href="https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume.docx" download aria-label="Download resume">Resume &#8595;</a>
-        <div class="status-indicator"></div>
       </div>
     </div>
   </header>
@@ -759,7 +758,7 @@ document.addEventListener('DOMContentLoaded', function () {
     outline-offset: 2px;
   }
 
-  .status-indicator {
+  .status-indicator-removed {
     width: 12px;
     height: 12px;
     background: #0f0;
@@ -3084,7 +3083,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .contact-line .dot{color:#07a}
     .resume-fallback{text-align:center;font-size:13px;margin:8px 0 0}
     .resume-fallback a{color:#0ff}
-    .header-resume-btn{display:inline-flex;align-items:center;height:40px;padding:0 14px;margin-right:10px;border:2px solid rgba(0,255,255,.5);border-radius:20px;background:linear-gradient(135deg,rgba(0,255,255,.08),rgba(0,204,204,.05));color:#0ff;font-weight:800;letter-spacing:1px;text-decoration:none;transition:all .25s ease;white-space:nowrap}
+    .header-resume-btn{display:inline-flex;align-items:center;height:40px;padding:0 14px;margin:0;border:2px solid rgba(0,255,255,.5);border-radius:20px;background:linear-gradient(135deg,rgba(0,255,255,.08),rgba(0,204,204,.05));color:#0ff;font-weight:800;letter-spacing:1px;text-decoration:none;transition:all .25s ease;white-space:nowrap}
     .header-resume-btn:hover{background:rgba(0,255,255,.18);border-color:#0ff;box-shadow:0 0 16px rgba(0,255,255,.35);transform:translateY(-1px)}
     .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
     .skip-link:focus{left:8px;top:8px;width:auto;height:auto;padding:8px 14px;z-index:10001;background:#000;color:#0ff;border:2px solid #0ff;border-radius:6px}
@@ -3100,27 +3099,37 @@ document.addEventListener('DOMContentLoaded', function () {
     var resumeDownloadSidebar = document.getElementById('resume-download-sidebar');
     var resumeIframe = document.getElementById('resume-iframe');
     var profileCta = document.querySelector('.profile-cta');
+    var headerBtn = document.querySelector('.header-resume-btn');
+    var fallbackLink = document.querySelector('.resume-fallback a');
 
     if (resumeTitle.innerText === 'Software Engineering Leader') {
       // Shorter Resume
       resumeTitle.innerText = 'Software Development Team Lead';
       if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res.docx';
       if (profileCta) profileCta.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res.docx';
+      if (headerBtn) headerBtn.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res.docx';
+      if (fallbackLink) fallbackLink.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res.docx';
       resumeIframe.src = 'https://docs.google.com/gview?url=https%3A%2F%2Fwww.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res.docx&embedded=true';
     } else if (resumeTitle.innerText === 'Software Development Team Lead') {
       resumeTitle.innerText = 'Principal Software Developer';
       if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx';
       if (profileCta) profileCta.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx';
+      if (headerBtn) headerBtn.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx';
+      if (fallbackLink) fallbackLink.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx';
       resumeIframe.src = 'https://docs.google.com/gview?url=https%3A%2F%2Fwww.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-PSD.docx&embedded=true';
     } else if (resumeTitle.innerText === 'Principal Software Developer') {
       resumeTitle.innerText = 'Software Engineering Manager';
       if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-SEM.pdf';
       if (profileCta) profileCta.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-SEM.pdf';
+      if (headerBtn) headerBtn.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-SEM.pdf';
+      if (fallbackLink) fallbackLink.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-SEM.pdf';
       resumeIframe.src = 'https://docs.google.com/gview?url=https%3A%2F%2Fwww.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Res-SEM.pdf&embedded=true';
     } else {
       resumeTitle.innerText = 'Software Engineering Leader';
       if (resumeDownloadSidebar) resumeDownloadSidebar.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume.docx';
       if (profileCta) profileCta.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume.docx';
+      if (headerBtn) headerBtn.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume.docx';
+      if (fallbackLink) fallbackLink.href = 'https://www.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume.docx';
       resumeIframe.src = 'https://docs.google.com/gview?url=https%3A%2F%2Fwww.matrix.tools/api/resume/JesseBooth/Jesse-Booth-Resume.docx&embedded=true';
     }
   }
